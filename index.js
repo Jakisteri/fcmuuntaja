@@ -1,5 +1,5 @@
 function fahrenheittocelsius(fahrenheit) {
-    let celsius = fahrenheit;
+    let celsius = ((fahrenheit - 32) / 1.8).toFixed(1);
     return celsius;
 }
 
