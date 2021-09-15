@@ -16,17 +16,30 @@
             h1 {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
+
+            input {
+                width: 4vw;
+                background-color: rgb(225, 203, 255);
+                text-align: center;
+            }
+
+            button {
+                background-color: rgb(151, 158, 255);
+            }
+
         </style>
     </head>
     <body>
         <h1>°F to °C converter</h1>
         <form>
             <label>Type Fahrenheit degrees to convert to Celsius:</label>
-            <input type="number" min="0" max="10" required>
+            <p>
+            <input type="number">
             <button type="button">Convert</button>
+            </p>
         </form>
         <p>
-            <span id="fahrenheit">?</span> ° F =  <span id="celsius">?</span>° C
+            <span id="fahrenheit">?</span> °F is  <span id="celsius">?</span> °C
         </p>
     </body>
 </html>
