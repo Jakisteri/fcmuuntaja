@@ -5,16 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>°F to °C converter</title>
         <script type="text/javascript" src="index.js" defer></script>
+        <!-- Tästä eteenpäin CSS määritykset-->
+        <style>
+            body {
+                background-color: rgb(170, 192, 255);
+                text-align: center;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            h1 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
     </head>
     <body>
         <h1>°F to °C converter</h1>
         <form>
-            <label>Syötä lämpötila Fahrenheit-lukemana</label>
-            <input type="number">
-            <button type="button">Muunna</button>
+            <label>Type Fahrenheit degrees to convert to Celsius:</label>
+            <input type="number" min="0" max="10" required>
+            <button type="button">Convert</button>
         </form>
         <p>
-            <span id="fahrenheit">?</span> °F = <span id="celsius">?</span>°C
+            <span id="fahrenheit">?</span> ° F =  <span id="celsius">?</span>° C
         </p>
     </body>
 </html>
