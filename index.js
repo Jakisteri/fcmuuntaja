@@ -1,9 +1,3 @@
-function fahrenheittocelsius(fahrenheit) {
-    let celsius = ((fahrenheit - 32) / 1.8).toFixed(1);
-    return celsius;
-}
-
-
 function muunnaFC() {
     let syötetty = syötettyfahrenheit.value;
     tulostefahrenheit.textContent = syötetty;
