@@ -7,8 +7,15 @@ function fahrenheittocelsius(fahrenheit) {
 function convertFC() {
     let usersFahrenheit = inputFahrenheit.value;
     printFahrenheit.textContent = usersFahrenheit;
-
-    printCelsius.textContent = fahrenheittocelsius(usersFahrenheit);
+    if(usersFahrenheit==="") {
+        FahrenheitMarkIs.textContent = ""
+        CelsiusMark.textContent = ""
+        printCelsius.textContent = "Submit Fahrenheit degrees!"
+    } else {
+        FahrenheitMarkIs.textContent = "°F is"
+        CelsiusMark.textContent = "°C"
+        printCelsius.textContent = fahrenheittocelsius(usersFahrenheit);
+    }
 }
 
 const inputFahrenheit = document.getElementById("inputFC");
@@ -29,8 +36,15 @@ function celsiustofahrenheit(celsius) {
 function convertCF() {
     let usersCelsius = inputCelsius.value;
     printCelsius2.textContent = usersCelsius;
-
-    printFahrenheit2.textContent = celsiustofahrenheit(usersCelsius);
+    if(usersCelsius==="") {
+        FahrenheitMark.textContent = ""
+        CelsiusMarkIs.textContent = ""
+        printFahrenheit2.textContent = "Submit Celsius degrees!"
+    } else {
+        FahrenheitMark.textContent = "°F"
+        CelsiusMarkIs.textContent = "°C is"
+        printFahrenheit2.textContent = celsiustofahrenheit(usersCelsius);
+    }
 }
 
 const inputCelsius = document.getElementById("inputCF");
@@ -38,6 +52,14 @@ const inputCelsius = document.getElementById("inputCF");
 const printCelsius2 = document.getElementById("celsius2");
 
 const printFahrenheit2 = document.getElementById("fahrenheit2");
+
+const CelsiusMark = document.getElementById("CelsiusC");
+
+const FahrenheitMarkIs = document.getElementById("FahrenheitF=");
+
+const FahrenheitMark = document.getElementById("FahrenheitF");
+
+const CelsiusMarkIs = document.getElementById("CelsiusC=");
 
 const convertbutton2 = document.getElementById("buttonCF");
 convertbutton2.addEventListener("click", convertCF);

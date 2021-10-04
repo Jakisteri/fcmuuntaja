@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var clicks = 0;
+        function klikit() {
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+        };
+    </script>
+</head>
+<body>
+    <button type="button" onClick="klikit()">Painettu <a id="clicks">0</a> kertaa</button>
+</body>
+</html>
+<html>
