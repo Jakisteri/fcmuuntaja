@@ -7,82 +7,118 @@
         <script src="index.js" defer></script>
         <!-- Tästä eteenpäin CSS määritykset-->
         <style>
-            body {
-                background-color: #ff9933;
-                text-align: center;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            .grid-container {
+                display: grid; 
+                grid-auto-columns: 1fr; 
+                grid-template-columns: 250px 1fr 1fr 1fr 1fr; 
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+                gap: 10px 10px; 
+                grid-template-areas: 
+                    "sidenav headerdiv headerdiv headerdiv headerdiv"
+                    "sidenav inputdiv inputdiv inputdiv inputdiv"
+                    "sidenav maindiv maindiv maindiv maindiv"
+                    "sidenav maindiv maindiv maindiv maindiv"
+                    "sidenav maindiv maindiv maindiv maindiv";
             }
 
-            header {
-                margin-left: auto;
-                margin-right: auto;
-                width: 60vw;
+            .logodiv {
+                grid-area: logodiv;
+
+            }
+
+            .sidenav {
+                grid-area: sidenav;
+                text-align: center;
                 border-style: outset;
-                background-color:rgb(255, 179, 80);
+                border-radius: 5px;
             }
 
-            h1 {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                text-transform: uppercase;
-                text-shadow: 2px 2px;
+            .headerdiv {
+                grid-area: headerdiv;
+                justify-self: center;
             }
 
-            button {
-                background-color: rgb(255, 223, 80);
-                border: rgb(0, 0, 0), solid;
-                padding: 8px 18px;
-                border-radius: 8px;
-                text-decoration: none;
-                margin: 2px 1px;
-                cursor: pointer;
-                transition-duration: 0.5s;
+            .inputdiv {
+                grid-area: inputdiv;
+                justify-self: center;
             }
 
-            button:hover {
-                background-color: rgb(255, 255, 255);
-
+            .maindiv {
+                grid-area: maindiv;
+                justify-self: center;
             }
 
-            input[type = "number"] {
-                width: 15mm;
-                background-color: #ffffff;
-                text-align: center;
+            #fdiv {
+                display: none;
+            }
+
+            #cdiv {
+                display: none;
             }
 
         </style>
     </head>
     <body>
-        <header>
-        <h1>Unit Conversion</h1>
-        </header>
-        <form>
-            <h2>Choose your input type:</h2>
-            <input type="radio" id="FtoC" name="inputtype" value="FahrenheitToCelsius">
-            <label for="FtoC">Fahrenheit</label>
-            <input type="radio" id="CtoF" name="inputtype" value="CelsiusToFahrenheit">
-            <label for="FtoC">Celsius</label>
-        </form>
-        <h2>°F to °C converter</h2>
-        <form>
-            <label>Type Fahrenheit degrees to convert to Celsius:</label>
-            <p>
-            <input id="inputFC" type="number">
-            <button id="buttonFC" type="button">Convert</button>
-            </p>
-        </form>
-        <p>
-            <span id="fahrenheit1">?</span> <span id="FahrenheitF=">°F is </span>  <span id="celsius1">?</span> <span id="CelsiusC">°C</span>
-        </p>
-        <h2>°C TO °F converter</h2>
-        <form>
-            <label>Type Celsius degrees to convert to Fahrenheit:</label>
-            <p>
-                <input id="inputCF" type="number">
-                <button id="buttonCF" type="button">Convert</button>
-            </p>
-        </form>
-        <p>
-            <span id="celsius2">?</span> <span id="CelsiusC=">°C is</span>  <span id="fahrenheit2">?</span> <span id=FahrenheitF>°F</span>
-        </p>
+        <!--Grid-container-->
+        <div class="grid-container">
+            <!--Header-->
+            <div class="headerdiv">
+                <header>
+                <h1>Unit Conversion Tool</h1>
+                </header>
+            </div>
+
+            <!--Input type chooser-->
+            <div class="inputdiv" id="inputchoise">
+                <h2>Choose your input type:</h2>
+                <input type="button" id="CtoF" name="inputtype" value="CelsiusToFahrenheit" onclick="inputType(value)">
+                <label for="FtoC">Celsius</label>
+                <input type="button" id="CtoF" name="inputtype" value="FahrenheitToCelsius" onclick="inputType(value)">
+                <label>Fahrenheit</label>
+            </div>
+
+            <!--F to C converter in their parent "maindiv"-->
+            <div class="maindiv">
+                <div id="fdiv">
+                <h2>°F to °C converter</h2>
+                <form>
+                    <label>Type Fahrenheit degrees to convert to Celsius:</label>
+                    <p>
+                    <input id="inputFC" type="number">
+                    <button id="buttonFC" type="button">Convert</button>
+                    </p>
+                </form>
+                <p>
+                    <span id="fahrenheit1">?</span> <span id="FahrenheitF=">°F is</span>  <span id="celsius1">?</span> <span id="CelsiusC">°C</span>
+                </p>
+                </div>
+
+                <!--C to F converter-->
+                <div id="cdiv">
+                    <h2>°C to °F converter</h2>
+                    <form>
+                        <label>Type Celsius degrees to convert to Fahrenheit:</label>
+                        <p>
+                            <input id="inputCF" type="number">
+                            <button id="buttonCF" type="button">Convert</button>
+                        </p>
+                    </form>
+                    <p>
+                        <span id="celsius2">?</span> <span id="CelsiusC=">°C is</span>  <span id="fahrenheit2">?</span> <span id="FahrenheitF">°F</span>
+                    </p>
+                </div>
+            </div>
+            <!--"Sidenav"-->
+            <div class="sidenav">
+                <!--Logo-->
+                <div class="logodiv">
+                    <img src="helmetlogo.png" style="width:150px;height:120px;">
+                </div>
+                <h2>Menu</h2>
+                <nav>
+                    <a href="celsiustofahrenheit.html">Celsius to Fahrenheit</a>
+                </nav>
+            </div>
+        </div>
     </body>
 </html>
