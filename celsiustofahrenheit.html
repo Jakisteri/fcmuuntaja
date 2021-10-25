@@ -67,7 +67,45 @@
                 <h1>Unit Conversion Toolbox</h1>
                 </header>
             </div>
-            
+
+            <!--Input type chooser-->
+            <div class="inputdiv" id="inputchoise">
+                <h2>Choose your input type:</h2>
+                <button type="button" id="CtoF" name="inputtype" value="CelsiusToFahrenheit" onclick="inputType(value)">Celsius to Fahrenheit</button>
+                <button type="button" id="CtoF" name="inputtype" value="FahrenheitToCelsius" onclick="inputType(value)">Fahrenheit to Celsius</button>
+            </div>
+
+            <!--Converter parent div called "maindiv"-->
+            <div class="maindiv">
+                <div id="fdiv">
+                <h2>°F to °C converter</h2>
+                <form>
+                    <label>Type Fahrenheit degrees to convert to Celsius:</label>
+                    <p>
+                    <input id="inputFC" type="number">
+                    <button id="buttonFC" type="button">Convert</button>
+                    </p>
+                </form>
+                <p>
+                    <span id="fahrenheit1">?</span> <span id="FahrenheitF=">°F is</span>  <span id="celsius1">?</span> <span id="CelsiusC">°C</span>
+                </p>
+                </div>
+
+                <!--C to F converter-->
+                <div id="cdiv">
+                    <h2>°C to °F converter</h2>
+                    <form>
+                        <label>Type Celsius degrees to convert to Fahrenheit:</label>
+                        <p>
+                            <input id="inputCF" type="number">
+                            <button id="buttonCF" type="button">Convert</button>
+                        </p>
+                    </form>
+                    <p>
+                        <span id="celsius2">?</span> <span id="CelsiusC=">°C is</span>  <span id="fahrenheit2">?</span> <span id="FahrenheitF">°F</span>
+                    </p>
+                </div>
+            </div>
             <!--"Sidenav"-->
             <div class="sidenav">
                 <!--Logo-->

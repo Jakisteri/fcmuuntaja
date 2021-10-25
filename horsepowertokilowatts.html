@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>°F to °C converter</title>
-        <script src="index.js" defer></script>
+        <script src="horsepowerkilowatt.js" defer></script>
         <!-- Tästä eteenpäin CSS määritykset-->
         <style>
             .grid-container {
@@ -48,11 +48,11 @@
                 justify-self: center;
             }
 
-            #fdiv {
+            #hpdiv {
                 display: none;
             }
 
-            #cdiv {
+            #kwdiv {
                 display: none;
             }
 
@@ -67,7 +67,45 @@
                 <h1>Unit Conversion Toolbox</h1>
                 </header>
             </div>
-            
+
+            <!--Input type chooser-->
+            <div class="inputdiv" id="inputchoise">
+                <h2>Choose your input type:</h2>
+                <button type="button" id="KWtoHP" name="inputtype" value="KilowattToHorsepower" onclick="inputType(value)">Kilowatt to Horsepower</button>
+                <button type="button" id="HPtoKW" name="inputtype" value="HorsepowerToKilowatt" onclick="inputType(value)">Horsepower to Kilowatt</button>
+            </div>
+
+            <!--Converter parent div called "maindiv"-->
+            <div class="maindiv">
+                <div id="hpdiv">
+                    <h2>Horsepower to Kilowatts converter</h2>
+                    <form>
+                        <label>Type Horsepower to convert to Kilowatts:</label>
+                        <p>
+                        <input id="inputHp" type="number" min="0">
+                        <button id="buttonHp" type="button">Convert</button>
+                        </p>
+                    </form>
+                    <p>
+                        <span id="inputhorsepower">?</span> <span id="horsepower=">HP is</span>  <span id="outputkilowatt">?</span> <span id="kilowattkw">kW</span>
+                    </p>
+                </div>
+
+                <!--KW to HP converter-->
+                <div id="kwdiv">
+                    <h2>Kilowatts to Horsepower converter</h2>
+                    <form>
+                        <label>Type Kilowatts to convert to Horsepower:</label>
+                        <p>
+                            <input id="inputKw" type="number" min="0">
+                            <button id="buttonKw" type="button">Convert</button>
+                        </p>
+                    </form>
+                    <p>
+                        <span id="inputkilowatt">?</span> <span id="kilowatt=">kW is</span>  <span id="outputhorsepower">?</span> <span id="horsepowerhp">HP</span>
+                    </p>
+                </div>
+            </div>
             <!--"Sidenav"-->
             <div class="sidenav">
                 <!--Logo-->

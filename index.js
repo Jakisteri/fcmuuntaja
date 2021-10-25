@@ -13,12 +13,20 @@ function convertFC() {
         CelsiusMark.textContent = ""
         printCelsius.textContent = "Submit Fahrenheit degrees!"
         printCelsius.style.color = "#FF0000"
+
+    } else if (usersFahrenheit < -459.67) {
+        FahrenheitMarkIs.textContent = "Bellow -273,15 °C or -459.67 °F is"
+        CelsiusMark.textContent = "absolute zero!"
+        CelsiusMark.style.color = "#0000ff"
+        printCelsius.textContent = ""
+        printFahrenheit.textContent = ""
         
     } else {
         FahrenheitMarkIs.textContent = "°F is"
         CelsiusMark.textContent = "°C"
         printCelsius.textContent = fahrenheittocelsius(usersFahrenheit);
         printCelsius.style.color = ""
+        CelsiusMark.style.color = ""
     }
 }
 
@@ -46,15 +54,25 @@ function convertCF() {
         CelsiusMarkIs.textContent = ""
         printFahrenheit2.textContent = "Submit Celsius degrees!"
         printFahrenheit2.style.color = "#FF0000"
+
+    } else if (usersCelsius < -273.15) {
+        FahrenheitMark.textContent = "absolute zero!"
+        CelsiusMarkIs.textContent = "Bellow -273,15 °C or -459.67 °F is"
+        printFahrenheit2.textContent = ""
+        FahrenheitMark.style.color = "#0000ff"
+        printCelsius2.textContent = ""
+
     } else {
         FahrenheitMark.textContent = "°F"
         CelsiusMarkIs.textContent = "°C is"
         printFahrenheit2.textContent = celsiustofahrenheit(usersCelsius);
         printFahrenheit2.style.color = ""
+        FahrenheitMark.style.color = ""
     }
+
 }
 
-// Input type radio button function
+// Input type button function for Celsius/Fahrenheit converter
 
 function inputType(value) {
     var fahrenheitdiv = document.getElementById("fdiv");
