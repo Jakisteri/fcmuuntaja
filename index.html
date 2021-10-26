@@ -3,10 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>°F to °C converter</title>
+        <title>Unit Conversion Toolbox</title>
         <script src="index.js" defer></script>
-        <!-- Tästä eteenpäin CSS määritykset-->
+        <!-- CSS -->
         <style>
+            body {
+                font-family: 'Trebuchet MS', sans-serif;
+                background-color: #FFB396;
+            }
+
             .grid-container {
                 display: grid; 
                 grid-auto-columns: 1fr; 
@@ -23,37 +28,65 @@
 
             .logodiv {
                 grid-area: logodiv;
-
             }
 
             .sidenav {
                 grid-area: sidenav;
+                background-color: #FF4646;
+                text-transform: uppercase;
                 text-align: center;
+                font-weight: bold;
                 border-style: outset;
+                border-width: 5px;
                 border-radius: 5px;
+                border-color: #000000;
+            }
+
+            a:link {
+                text-decoration: none;
+                font-size: 20px;
+                text-transform: none;
+            }
+
+            a:visited {
+                color: black;
+                font-size: 20px;
+            }
+
+            a:hover {
+                cursor: pointer;
+                color: rgb(253, 253, 253);
+                font-size: 20px;
+            }
+
+            a:active {
+                color: rgb(255, 166, 0);
+                font-size: 20px;
+            }
+
+            h2.maindiv {
+                font-size: 80px;
             }
 
             .headerdiv {
                 grid-area: headerdiv;
+                background-color: #FF4646;
+                width: 20vw;
                 justify-self: center;
-            }
-
-            .inputdiv {
-                grid-area: inputdiv;
-                justify-self: center;
+                text-align: center;
+                border-style: outset;
+                border-width: 5px;
+                border-radius: 40px;
+                border-color: #000000;
             }
 
             .maindiv {
                 grid-area: maindiv;
+                width: 65vw;
+                padding-left: 40px;
+                padding-right: 40px;
                 justify-self: center;
-            }
-
-            #fdiv {
-                display: none;
-            }
-
-            #cdiv {
-                display: none;
+                text-align: center;
             }
 
         </style>
@@ -67,15 +100,30 @@
                 <h1>Unit Conversion Toolbox</h1>
                 </header>
             </div>
+            <!--Main div for text in index.html-->
+            <div class="maindiv">
+                <h2>Welcome to Unit Conversion Toolbox!</h2>
+                <br>
+                <span>This site is still in progress, but it's growing slow and steady one
+                unit conversion tool at a time. The future goal of Unit Converion Toolbox is to serve as a quick way to convert
+                many of the most commonly used units. Focus of possible future development will include adding conversion or other
+                tools that I personally need most in my life. Developing own conversion tools in form of a web page helps you to 
+                better understand website development in HTML, CSS and JavaScript, but you can also learn more about physical quantities
+                and formulas that underlie them.
+                </span>
+            </div>
             
             <!--"Sidenav"-->
             <div class="sidenav">
                 <!--Logo-->
+                <br>
                 <div class="logodiv">
-                    <img src="helmetlogo.png" style="width:150px;height:120px;">
+                    <img src="helmetlogo.png" style="width:150px;height:120px;" alt="Safety helmet logo">
                 </div>
-                <h2>Menu</h2>
+                <h2>Toolbox</h2>
+                <br>
                 <nav>
+                    <a href="index.html">Front page</a>
                     <a href="celsiustofahrenheit.html">Celsius/Fahrenheit</a>
                     <a href="horsepowertokilowatts.html">Horsepower/Kilowatts</a>
                 </nav>
